@@ -1,0 +1,143 @@
+/* style.css */
+
+:root {
+  --bg-color: #1e1e1e; /* dark grey */
+  --text-color: #f1f1f1; /* light grey */
+  --accent-brown: #8b5e3c;
+  --dark-brown: #5a3d28;
+  --black: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.navbar {
+  background: var(--black);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: var(--accent-brown);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: var(--accent-brown);
+}
+
+.hero {
+  background: var(--dark-brown);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent-brown);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent-brown);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: var(--dark-brown);
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: var(--accent-brown);
+  margin-bottom: 1rem;
+}
+
+.services ul,
+.social-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.services ul li {
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--accent-brown);
+  padding-left: 1rem;
+}
+
+.project {
+  background: #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.project a {
+  color: var(--accent-brown);
+  text-decoration: underline;
+}
+
+.contact a {
+  color: var(--accent-brown);
+}
+
+.social-links li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+.footer {
+  background: var(--black);
+  text-align: center;
+  padding: 1rem;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+

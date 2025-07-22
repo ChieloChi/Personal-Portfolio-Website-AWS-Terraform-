@@ -1,0 +1,9 @@
+# Terraform files to exclude
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+
+# AWS credentials (never include this!)
+*.pem
+*.key
+.aws/
