@@ -2,13 +2,13 @@
 
 A static portfolio website built using **HTML**, **CSS**, and **JavaScript**, and deployed on **AWS** using **Terraform**. This project features a fully automated infrastructure with **S3**, **CloudFront**, **ACM**, and a custom domain via **Namecheap**. The website is globally distributed, secure (HTTPS), and version-controlled via **GitHub**.
 
----
 
-## 📚 Table of Contents
 
-- [ Features](#-features)  
-- [ Tech Stack](#-tech-stack)  
-- [ Folder Structure](#-folder-structure)  
+## Table of Contents
+
+- [🚀 Features](#-features)  
+- [🛠 Tech Stack](#-tech-stack)  
+- [📁 Folder Structure](#-folder-structure)  
 - [📌 Project Setup Phases](#-project-setup-phases)  
   - [✅ Phase 1: Project Planning](#-phase-1-project-planning)  
   - [✅ Phase 2: Website Development](#-phase-2-website-development)  
@@ -18,9 +18,9 @@ A static portfolio website built using **HTML**, **CSS**, and **JavaScript**, an
 - [🌍 Live Website](#-live-website)  
 - [📄 License](#-license)
 
----
 
-##  Features
+
+## 🚀 Features
 
 - Responsive design (mobile + desktop)
 - Secure HTTPS via [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/)
@@ -31,9 +31,9 @@ A static portfolio website built using **HTML**, **CSS**, and **JavaScript**, an
 - DNS validation for SSL
 - Source-controlled on [GitHub](https://github.com)
 
----
 
-##  Tech Stack
+
+## 🛠 Tech Stack
 
 | Tool / Service             | Purpose                                   |
 |---------------------------|-------------------------------------------|
@@ -44,11 +44,11 @@ A static portfolio website built using **HTML**, **CSS**, and **JavaScript**, an
 | [Terraform](https://www.terraform.io/) | Infrastructure as Code        |
 | [GitHub](https://github.com)         | Version control & collaboration |
 
----
 
-##  Folder Structure
 
-```bash
+## 📁 Folder Structure
+
+
 .
 ├── index.html         # Home page
 ├── styles.css         # CSS styling
@@ -72,46 +72,53 @@ Registered a custom domain via Namecheap
 ✅ Phase 2: Website Development
 Built website using:
 
-index.html
+- index.html
 
-styles.css
+- styles.css
 
-script.js
+- script.js
 
-Tested layout and responsiveness locally
+- Tested layout and responsiveness locally
 
 ✅ Phase 3: Infrastructure Setup with Terraform
 Initialized Terraform and provisioned AWS resources:
 
-S3 bucket for static hosting
+- S3 bucket for static hosting
 
-CloudFront distribution with caching and HTTPS
+- CloudFront distribution with caching and HTTPS
 
-SSL certificate from ACM (us-east-1)
+- SSL certificate from ACM (us-east-1)
 
-Used terraform init, plan, and apply to deploy
+- Used terraform init, plan, and apply to deploy
 
 ✅ Phase 4: Domain & HTTPS Integration
-Requested ACM certificate with DNS validation
 
-Verified domain ownership via Namecheap DNS records
+- Requested ACM certificate with DNS validation
 
-Configured CloudFront to use the custom domain and HTTPS
+- Verified domain ownership via Namecheap DNS records
+
+- Configured CloudFront to use the custom domain and HTTPS
 
 ✅ Phase 5: Deployment
-Uploaded files to S3 using AWS CLI
 
-Set public read access via bucket policy
+- Uploaded files to S3 using AWS CLI
 
-Confirmed:
+- Set public read access via bucket policy
+
+- Confirmed:
 
 Website loads globally via HTTPS
 
 CDN performance is optimized
 
+optimized
+
 🌍 Live Website
-Visit Website www.ssstech.site
+🖱️ Visit Website
 Deployed and served securely with CloudFront & S3 over HTTPS.
 
 📄 License
 This project is licensed under the MIT License.
+
+
+
