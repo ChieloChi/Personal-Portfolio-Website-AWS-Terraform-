@@ -1,26 +1,31 @@
-// script.js
+// Toggle hamburger menu visibility
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  const isOpen = nav.classList.contains("active");
 
-// Scroll reveal animations (basic fade-in effect)
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('section');
+  nav.classList.toggle("active");
 
-  const revealSection = (entry, observer) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+  // Optionally change hamburger icon to "X"
+  const hamburger = document.querySelector(".hamburger");
+  if (isOpen) {
+    hamburger.textContent = "☰";
+  } else {
+    hamburger.textContent = "✖";
+  }
+}
+
+// Optional: Animate reveal elements on scroll
+function revealOnScroll() {
+  const reveals = document.querySelectorAll(".reveal");
+  for (const el of reveals) {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const visibleThreshold = 100;
+
+    if (elementTop < windowHeight - visibleThreshold) {
+      el.classList.add("active");
     }
-  };
+  }
+}
 
-  const options = {
-    threshold: 0.15
-  };
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => revealSection(entry, obs));
-  }, options);
-
-  sections.forEach(section => {
-    section.classList.add('hidden');
-    observer.observe(section);
-  });
-});
+window.addEventListener("scroll", revealOnScroll);

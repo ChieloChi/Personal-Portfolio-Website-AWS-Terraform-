@@ -1,5 +1,9 @@
 variable "bucket_name" {
-    description = "The name of the s3 bucket for the portfolio site"
-    type = string
-  
+  type        = string
+  description = "The name of the S3 bucket"
+}
+
+variable "acm_certificate_arn" {
+  type        = string
+  description = "The ARN of the ACM certificate for CloudFront"
 }
