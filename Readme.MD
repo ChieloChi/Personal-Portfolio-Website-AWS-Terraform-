@@ -6,20 +6,22 @@ A static portfolio website built using **HTML**, **CSS**, and **JavaScript**, an
 
 ## Table of Contents
 
-- [Features](#-features)  
-- [Tech Stack](#-tech-stack)  
-- [📌 Project Setup Phases](#-project-setup-phases)  
-  - [✅ Phase 1 Project Planning](#-phase-1-project-planning)  
-  - [✅ Phase 2 Website Development](#-phase-2-website-development)  
-  - [✅ Phase 3 Infrastructure Setup with Terraform](#-phase-3-infrastructure-setup-with-terraform)  
-  - [✅ Phase 4 Domain & HTTPS Integration](#-phase-4-domain--https-integration)  
-  - [✅ Phase 5 Deployment](#-phase-5-deployment)  
-- [Visit Website](#-visit-website)  
-- [License](#-license)
+- [Features](#features)  
+- [Tech Stack](#tech-stack)  
+- [Project Setup Phases](#project-setup-phases)  
+  - [Phase 1: Project Planning](#phase-1-project-planning)  
+  - [Phase 2: Website Development](#phase-2-website-development)  
+  - [Phase 3: Infrastructure Setup with Terraform](#phase-3-infrastructure-setup-with-terraform)  
+  - [Phase 4: Domain and HTTPS Integration](#phase-4-domain-and-https-integration)  
+  - [Phase 5: Deployment](#phase-5-deployment)  
+- [Visit Website](#visit-website)  
+- [License](#license)
+
 
 
 
 ## Features
+
 
 - Responsive design (mobile + desktop)
 - Secure HTTPS via [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/)
@@ -47,9 +49,9 @@ A static portfolio website built using **HTML**, **CSS**, and **JavaScript**, an
 
 
 
-📌 Project Setup Phases
+## Project Setup Phases
 
-✅ Phase 1: Project Planning
+### Phase 1: Project Planning
 Defined project scope: Create a modern, fast, and secure personal website
 
 Selected AWS services: S3, CloudFront, ACM
@@ -58,7 +60,7 @@ Chose Terraform for repeatable infrastructure setup
 
 Registered a custom domain via Namecheap
 
-✅ Phase 2: Website Development
+### Phase 2: Website Development
 Built website using:
 
 - index.html
@@ -69,7 +71,7 @@ Built website using:
 
 - Tested layout and responsiveness locally
 
-✅ Phase 3: Infrastructure Setup with Terraform
+### Phase 3: Infrastructure Setup with Terraform
 Initialized Terraform and provisioned AWS resources:
 
 - S3 bucket for static hosting
@@ -80,7 +82,7 @@ Initialized Terraform and provisioned AWS resources:
 
 - Used terraform init, plan, and apply to deploy
 
-✅ Phase 4: Domain & HTTPS Integration
+### Phase 4: Domain and HTTPS Integration
 
 - Requested ACM certificate with DNS validation
 
@@ -88,7 +90,7 @@ Initialized Terraform and provisioned AWS resources:
 
 - Configured CloudFront to use the custom domain and HTTPS
 
-✅ Phase 5: Deployment
+### Phase 5: Deployment
 
 - Uploaded files to S3 using AWS CLI
 
@@ -105,6 +107,7 @@ optimized
 
 
 ## Visit Website
+
 www.ssstech.site
 Deployed and served securely with CloudFront & S3 over HTTPS.
 
