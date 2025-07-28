@@ -6,21 +6,20 @@ A static portfolio website built using **HTML**, **CSS**, and **JavaScript**, an
 
 ## Table of Contents
 
-- [🚀 Features](#-features)  
-- [🛠 Tech Stack](#-tech-stack)  
-- [📁 Folder Structure](#-folder-structure)  
+- [Features](#-features)  
+- [Tech Stack](#-tech-stack)  
 - [📌 Project Setup Phases](#-project-setup-phases)  
-  - [✅ Phase 1: Project Planning](#-phase-1-project-planning)  
-  - [✅ Phase 2: Website Development](#-phase-2-website-development)  
-  - [✅ Phase 3: Infrastructure Setup with Terraform](#-phase-3-infrastructure-setup-with-terraform)  
-  - [✅ Phase 4: Domain & HTTPS Integration](#-phase-4-domain--https-integration)  
-  - [✅ Phase 5: Deployment](#-phase-5-deployment)  
-- [🌍 Live Website](#-live-website)  
-- [📄 License](#-license)
+  - [✅ Phase 1 Project Planning](#-phase-1-project-planning)  
+  - [✅ Phase 2 Website Development](#-phase-2-website-development)  
+  - [✅ Phase 3 Infrastructure Setup with Terraform](#-phase-3-infrastructure-setup-with-terraform)  
+  - [✅ Phase 4 Domain & HTTPS Integration](#-phase-4-domain--https-integration)  
+  - [✅ Phase 5 Deployment](#-phase-5-deployment)  
+- [Visit Website](#-visit-website)  
+- [License](#-license)
 
 
 
-## 🚀 Features
+## Features
 
 - Responsive design (mobile + desktop)
 - Secure HTTPS via [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/)
@@ -33,7 +32,7 @@ A static portfolio website built using **HTML**, **CSS**, and **JavaScript**, an
 
 
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Tool / Service             | Purpose                                   |
 |---------------------------|-------------------------------------------|
@@ -46,20 +45,10 @@ A static portfolio website built using **HTML**, **CSS**, and **JavaScript**, an
 
 
 
-## 📁 Folder Structure
-
-
-.
-├── index.html         # Home page
-├── styles.css         # CSS styling
-├── script.js          # JavaScript interactivity
-├── main.tf            # Terraform configuration for AWS resources
-├── variables.tf       # Terraform input variables
-├── outputs.tf         # Terraform output values
-└── README.md          # Project documentation
 
 
 📌 Project Setup Phases
+
 ✅ Phase 1: Project Planning
 Defined project scope: Create a modern, fast, and secure personal website
 
@@ -113,11 +102,13 @@ CDN performance is optimized
 
 optimized
 
-🌍 Live Website
-🖱️ Visit Website
+
+
+## Visit Website
+www.ssstech.site
 Deployed and served securely with CloudFront & S3 over HTTPS.
 
-📄 License
+## License
 This project is licensed under the MIT License.
 
 
