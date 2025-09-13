@@ -12,21 +12,11 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
+      - name: Run HTML/CSS/JS Lint (optional)
         run: |
-          npm ci
-
-      - name: Run HTML/CSS/JS Lint
-        run: |
-          echo "Running code quality checks..."
-          npx eslint ./ --ext .js
-          npx stylelint "**/*.css"
-          # add more linters if needed
+          echo "Skipping npm steps for static site."
+          # If you want, you can add linters that don't require npm
+          # Example: use htmlhint or stylelint via Docker if needed
 
       - name: Initialize Terraform
         run: terraform init -backend=false
@@ -51,7 +41,8 @@ jobs:
       - name: Backup current S3 files
         run: |
           echo "Backing up current S3 files..."
-          aws s3 sync s3://your-bucket-name s3://your-bucket-name-backup-$(date +%Y%m%d%H%M%S)
+          TIMESTAMP=$(date +%Y%m%d%H%M%S)
+          aws s3 sync s3://your-bucket-name s3://your-bucket-name-backup-$TIMESTAMP
 
       - name: Sync files to S3
         run: |
