@@ -12,17 +12,21 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Run HTML/CSS/JS Lint (optional)
-        run: |
-          echo "Skipping npm steps for static site."
-          # If you want, you can add linters that don't require npm
-          # Example: use htmlhint or stylelint via Docker if needed
+      # Install Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
 
       - name: Initialize Terraform
         run: terraform init -backend=false
 
       - name: Validate Terraform
         run: terraform validate
+
+      # Optional lint step (skip npm)
+      - name: Run HTML/CSS/JS Lint (optional)
+        run: |
+          echo "Skipping npm steps for static site."
+          # If needed, use htmlhint or stylelint via Docker
 
   deploy:
     needs: quality-gate
@@ -77,3 +81,4 @@ jobs:
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} \
             --paths "/*"
+
