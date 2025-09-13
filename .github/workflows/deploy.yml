@@ -12,7 +12,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      # Install Terraform
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
 
@@ -22,7 +21,6 @@ jobs:
       - name: Validate Terraform
         run: terraform validate
 
-      # Optional lint step (skip npm)
       - name: Run HTML/CSS/JS Lint (optional)
         run: |
           echo "Skipping npm steps for static site."
@@ -46,7 +44,9 @@ jobs:
         run: |
           echo "Backing up current S3 files..."
           TIMESTAMP=$(date +%Y%m%d%H%M%S)
-          aws s3 sync s3://ssstech-portfolio-website-bucket s3://ssstech-portfolio-website-bucket-backup-$TIMESTAMP
+          BACKUP_BUCKET=ssstech-portfolio-website-bucket-backup-$TIMESTAMP
+          aws s3 mb s3://$BACKUP_BUCKET
+          aws s3 sync s3://ssstech-portfolio-website-bucket s3://$BACKUP_BUCKET
 
       - name: Sync files to S3
         run: |
@@ -73,11 +73,9 @@ jobs:
       - name: Rollback to backup
         run: |
           echo "Deploy failed. Rolling back to backup..."
-          # Find the latest backup folder
           LATEST_BACKUP=$(aws s3 ls | grep ssstech-portfolio-website-bucket-backup | sort | tail -n 1 | awk '{print $4}')
           echo "Restoring backup: $LATEST_BACKUP"
           aws s3 sync s3://$LATEST_BACKUP s3://ssstech-portfolio-website-bucket --delete
-          # Invalidate CloudFront again after rollback
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} \
             --paths "/*"
