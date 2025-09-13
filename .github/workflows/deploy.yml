@@ -46,11 +46,11 @@ jobs:
         run: |
           echo "Backing up current S3 files..."
           TIMESTAMP=$(date +%Y%m%d%H%M%S)
-          aws s3 sync s3://your-bucket-name s3://your-bucket-name-backup-$TIMESTAMP
+          aws s3 sync s3://your-bucket-name s3://ssstech-portfolio-website-bucket -$TIMESTAMP
 
       - name: Sync files to S3
         run: |
-          aws s3 sync ./website s3://your-bucket-name --delete
+          aws s3 sync ./website s3://ssstech-portfolio-website-bucket  --delete
 
       - name: Invalidate CloudFront
         run: |
@@ -74,9 +74,9 @@ jobs:
         run: |
           echo "Deploy failed. Rolling back to backup..."
           # Find the latest backup folder
-          LATEST_BACKUP=$(aws s3 ls s3://your-bucket-name-backup/ | sort | tail -n 1 | awk '{print $2}')
+          LATEST_BACKUP=$(aws s3 ls s3://ssstech-portfolio-website-bucket -backup/ | sort | tail -n 1 | awk '{print $2}')
           echo "Restoring backup: $LATEST_BACKUP"
-          aws s3 sync s3://your-bucket-name-backup/$LATEST_BACKUP s3://your-bucket-name --delete
+          aws s3 sync s3://your-bucket-name-backup/$LATEST_BACKUP s3://ssstech-portfolio-website-bucket  --delete
           # Invalidate CloudFront again after rollback
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} \
