@@ -109,7 +109,7 @@ a:hover {
   position: relative;
   min-height: 100vh;
   padding-top: 160px;
-  background-image: url('https://pbs.twimg.com/profile_images/1948132896847392768/tIH5I-Z4.jpg');
+  background-image: url('ssstech.png');
   background-size: cover;
   background-position: center;
   filter: grayscale(100%);
@@ -144,7 +144,7 @@ a:hover {
 }
 
 .profile-image {
-  width: 50px; /* smaller size */
+  width: 100px; /* smaller size */
   height: auto;
   border-radius: 50%;
   margin-bottom: 1.5rem;
@@ -163,8 +163,8 @@ a:hover {
 }
 
 .hero h2 {
-  font-size: 2.8rem;
-  font-weight: 800;
+  font-size: 2.0rem;
+  font-weight: 600;
   margin-bottom: 0.6rem;
 }
 
