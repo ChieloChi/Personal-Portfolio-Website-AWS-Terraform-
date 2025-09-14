@@ -50,7 +50,7 @@ jobs:
 
       - name: Sync files to S3
         run: |
-          aws s3 sync "./Chielo's Website/src" s3://ssstech-portfolio-website-bucket --delete
+          aws s3 sync ./src s3://ssstech-portfolio-website-bucket --delete
 
       - name: Invalidate CloudFront
         run: |
