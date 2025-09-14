@@ -50,7 +50,7 @@ jobs:
 
       - name: Sync files to S3
         run: |
-          aws s3 sync ./website s3://ssstech-portfolio-website-bucket --delete
+          aws s3 sync "./Chielo's Website" s3://ssstech-portfolio-website-bucket --delete
 
       - name: Invalidate CloudFront
         run: |
@@ -79,3 +79,4 @@ jobs:
           aws cloudfront create-invalidation \
             --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID }} \
             --paths "/*"
+
